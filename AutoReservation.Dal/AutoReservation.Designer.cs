@@ -1,0 +1,2 @@
+﻿// Seeing this comment implies that the code generation for file 'D:\FILES\Juerg\Documents\STUDIUM\MsTe\Uebungen\8 Miniprojekt\MsTeAutoverleih\AutoReservation.Dal\AutoReservation.edmx'
+// failed. See the ErrorList for details.
