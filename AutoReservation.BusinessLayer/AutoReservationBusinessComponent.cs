@@ -25,6 +25,14 @@ namespace AutoReservation.BusinessLayer
             return autos.ToList();
         }
 
+        public Auto GetAutoById(int id)
+        {
+            var auto = from a in context.Autos
+                        where a.Id == id
+                        select a;
+            return auto.FirstOrDefault();
+        }
+
         public void DeleteAuto(Auto auto)
         {
             context.Autos.Attach(auto);
@@ -61,6 +69,14 @@ namespace AutoReservation.BusinessLayer
             return reservationen.ToList();
         }
 
+        public Reservation GetReservationById(int reservationNr)
+        {
+            var reservation = from r in context.Reservationen
+                              where r.ReservationNr == reservationNr
+                              select r;
+            return reservation.FirstOrDefault();
+        }
+
         public void DeleteReservation(Reservation reservation)
         {
             context.Reservationen.Attach(reservation);
@@ -91,10 +107,18 @@ namespace AutoReservation.BusinessLayer
         /*
          * Kunde CRUD-Operationen
          */
-        private IList<Kunde> GetKunden()
+        public IList<Kunde> GetKunden()
         {
             var kunden = from k in context.Kunden select k;
             return kunden.ToList();
+        }
+
+        public Kunde GetKundeById(int id)
+        {
+            var kunde = from k in context.Kunden
+                              where k.Id == id
+                              select k;
+            return kunde.FirstOrDefault();
         }
 
         public void DeleteKunde(Kunde kunde)
