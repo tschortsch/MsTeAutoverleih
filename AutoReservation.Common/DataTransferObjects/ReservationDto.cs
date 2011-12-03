@@ -10,9 +10,7 @@ namespace AutoReservation.Common.DataTransferObjects
         private int reservationNr;
         private DateTime von;
         private DateTime bis;
-
-        // TODO Typen überprüfen (Dto oder Klasse?)
-        private AutoKlasse auto;
+        private AutoDto auto;
         private KundeDto kunde;
 
         [DataMember]
@@ -61,7 +59,7 @@ namespace AutoReservation.Common.DataTransferObjects
         }
 
         [DataMember]
-        public AutoKlasse Auto
+        public AutoDto Auto
         {
             get { return auto; }
             set
