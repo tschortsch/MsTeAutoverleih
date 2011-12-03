@@ -7,7 +7,7 @@ using System.Data;
 
 namespace AutoReservation.BusinessLayer
 {
-    class AutoReservationBusinessComponent
+    public class AutoReservationBusinessComponent
     {
         private AutoReservationEntities context;
 

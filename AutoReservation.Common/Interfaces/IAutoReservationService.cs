@@ -8,7 +8,7 @@ using AutoReservation.Common.DataTransferObjects;
 namespace AutoReservation.Common.Interfaces
 {
     [ServiceContract]
-    interface IAutoReservationService
+    public interface IAutoReservationService
     {
         // Auto CRUD-Operationen
         [OperationContract]
