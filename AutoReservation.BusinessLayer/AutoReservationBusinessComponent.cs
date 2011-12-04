@@ -19,10 +19,13 @@ namespace AutoReservation.BusinessLayer
         /*
         * Auto CRUD-Operationen
         */
-        public IList<Auto> GetAutos()
+        public IList<Auto> Autos
         {
-            var autos = from a in context.Autos select a;
-            return autos.ToList();
+            get
+            {
+                var autos = from a in context.Autos select a;
+                return autos.ToList();
+            }
         }
 
         public Auto GetAutoById(int id)
@@ -40,7 +43,7 @@ namespace AutoReservation.BusinessLayer
             context.SaveChanges();
         }
 
-        public void UpdateAuto(Auto originalAuto, Auto modifiedAuto)
+        public void UpdateAuto(Auto modifiedAuto, Auto originalAuto)
         {
             try
             {
@@ -54,7 +57,7 @@ namespace AutoReservation.BusinessLayer
             }
         }
 
-        public void AddAuto(Auto auto)
+        public void InsertAuto(Auto auto)
         {
             context.AddToAutos(auto);
             context.SaveChanges();
@@ -63,10 +66,13 @@ namespace AutoReservation.BusinessLayer
         /*
          * Reservation CRUD-Operationen
          */
-        public IList<Reservation> GetReservationen()
+        public IList<Reservation> Reservationen
         {
-            var reservationen = from r in context.Reservationen select r;
-            return reservationen.ToList();
+            get
+            {
+                var reservationen = from r in context.Reservationen select r;
+                return reservationen.ToList();
+            }
         }
 
         public Reservation GetReservationById(int reservationNr)
@@ -84,7 +90,7 @@ namespace AutoReservation.BusinessLayer
             context.SaveChanges();
         }
 
-        public void UpdateReservation(Reservation originalReservation, Reservation modifiedReservation)
+        public void UpdateReservation(Reservation modifiedReservation, Reservation originalReservation)
         {
             try
             {
@@ -98,7 +104,7 @@ namespace AutoReservation.BusinessLayer
             }
         }
 
-        public void AddReservation(Reservation reservation)
+        public void InsertReservation(Reservation reservation)
         {
             context.AddToReservationen(reservation);
             context.SaveChanges();
@@ -107,10 +113,13 @@ namespace AutoReservation.BusinessLayer
         /*
          * Kunde CRUD-Operationen
          */
-        public IList<Kunde> GetKunden()
+        public IList<Kunde> Kunden
         {
-            var kunden = from k in context.Kunden select k;
-            return kunden.ToList();
+            get
+            {
+                var kunden = from k in context.Kunden select k;
+                return kunden.ToList();
+            }
         }
 
         public Kunde GetKundeById(int id)
@@ -128,7 +137,7 @@ namespace AutoReservation.BusinessLayer
             context.SaveChanges();
         }
 
-        public void UpdateKunde(Kunde originalKunde, Kunde modifiedKunde)
+        public void UpdateKunde(Kunde modifiedKunde, Kunde originalKunde)
         {
             try
             {
@@ -142,7 +151,7 @@ namespace AutoReservation.BusinessLayer
             }
         }
 
-        public void AddKunde(Kunde kunde)
+        public void InsertKunde(Kunde kunde)
         {
             context.AddToKunden(kunde);
             context.SaveChanges();
