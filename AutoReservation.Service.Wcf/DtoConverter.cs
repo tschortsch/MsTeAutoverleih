@@ -46,8 +46,7 @@ namespace AutoReservation.Service.Wcf
             if (auto is LuxusklasseAuto)
             {
                 dto.AutoKlasse = AutoKlasse.Luxusklasse;
-                // WORKAROUND casted to int from int?
-                dto.Basistarif = (int) ((LuxusklasseAuto)auto).Basistarif;
+                dto.Basistarif = ((LuxusklasseAuto)auto).Basistarif;
             }
 
 

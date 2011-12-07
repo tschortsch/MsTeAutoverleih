@@ -148,7 +148,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityType Name="LuxusklasseAuto" BaseType="Autoverleih.Auto">
-          <Property Type="Int32" Name="Basistarif" ConcurrencyMode="None" />
+          <Property Type="Int32" Name="Basistarif" ConcurrencyMode="None" Nullable="false" />
         </EntityType>
         <EntityType Name="MittelklasseAuto" BaseType="Autoverleih.Auto">
           </EntityType>

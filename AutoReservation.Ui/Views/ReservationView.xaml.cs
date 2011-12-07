@@ -4,14 +4,14 @@ using AutoReservation.Ui.ViewModels;
 namespace AutoReservation.Ui.Views
 {
     /// <summary>
-    /// Interaction logic for KundeView.xaml
+    /// Interaction logic for ReservationView.xaml
     /// </summary>
-    public partial class KundeView : UserControl
+    public partial class ReservationView : UserControl
     {
-        public KundeView()
+        public ReservationView()
         {
             InitializeComponent();
-            DataContext = new KundeViewModel();
+            DataContext = new ReservationViewModel();
         }
     }
 }
