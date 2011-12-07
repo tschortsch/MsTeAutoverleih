@@ -20,9 +20,9 @@ namespace AutoReservation.Common.DataTransferObjects
             {
                 if (id != value)
                 {
-                    SendPropertyChanging(() => id);
+                    SendPropertyChanging(() => Id);
                     id = value;
-                    SendPropertyChanged(() => id);
+                    SendPropertyChanged(() => Id);
                 }
             }
         }
@@ -34,9 +34,9 @@ namespace AutoReservation.Common.DataTransferObjects
             set {
                 if(marke != value)
                 {
-                    SendPropertyChanging(() => marke);
+                    SendPropertyChanging(() => Marke);
                     marke = value;
-                    SendPropertyChanged(() => marke);
+                    SendPropertyChanged(() => Marke);
                 }
             }
         }
@@ -48,9 +48,9 @@ namespace AutoReservation.Common.DataTransferObjects
             set {
                 if (tagestarif != value)
                 {
-                    SendPropertyChanging(() => tagestarif);
+                    SendPropertyChanging(() => Tagestarif);
                     tagestarif = value;
-                    SendPropertyChanged(() => tagestarif);
+                    SendPropertyChanged(() => Tagestarif);
                 }
             }
         }
@@ -63,9 +63,9 @@ namespace AutoReservation.Common.DataTransferObjects
             {
                 if (basistarif != value)
                 {
-                    SendPropertyChanging(() => basistarif);
+                    SendPropertyChanging(() => Basistarif);
                     basistarif = value;
-                    SendPropertyChanged(() => basistarif);
+                    SendPropertyChanged(() => Basistarif);
                 }
             }
         }
@@ -78,9 +78,9 @@ namespace AutoReservation.Common.DataTransferObjects
             {
                 if (autoKlasse != value)
                 {
-                    SendPropertyChanging(() => autoKlasse);
+                    SendPropertyChanging(() => AutoKlasse);
                     autoKlasse = value;
-                    SendPropertyChanged(() => autoKlasse);
+                    SendPropertyChanged(() => AutoKlasse);
                 }
             }
         }
