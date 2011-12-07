@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using AutoReservation.Common.Interfaces;
 using AutoReservation.Service.Wcf;
+using System.ServiceModel;
 
 namespace AutoReservation.Ui.Factory
 {
@@ -11,7 +12,9 @@ namespace AutoReservation.Ui.Factory
     {
         public override IAutoReservationService CreateBusinessLayerInstance()
         {
-            return new AutoReservationService();
+            ChannelFactory<IAutoReservationService> factory = new ChannelFactory<IAutoReservationService>("AutoReservationService");
+            IAutoReservationService proxy = factory.CreateChannel();
+            return proxy;
         }
     }
 }

@@ -11,7 +11,6 @@ namespace AutoReservation.Ui.Factory
     {
         public override IAutoReservationService CreateBusinessLayerInstance()
         {
-            // TODO return local service instance
             return new AutoReservationService();
         }
     }

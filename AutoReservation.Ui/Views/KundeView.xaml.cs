@@ -11,7 +11,7 @@ namespace AutoReservation.Ui.Views
         public KundeView()
         {
             InitializeComponent();
-            DataContext = new KundeViewModel();
+            //DataContext = new KundeViewModel();
         }
     }
 }
