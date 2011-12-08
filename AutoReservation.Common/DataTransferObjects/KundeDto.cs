@@ -20,9 +20,9 @@ namespace AutoReservation.Common.DataTransferObjects
             {
                 if (id != value)
                 {
-                    SendPropertyChanging(() => id);
+                    SendPropertyChanging(() => Id);
                     id = value;
-                    SendPropertyChanged(() => id);
+                    SendPropertyChanged(() => Id);
                 }
             }
         }
@@ -35,9 +35,9 @@ namespace AutoReservation.Common.DataTransferObjects
             {
                 if (nachname != value)
                 {
-                    SendPropertyChanging(() => nachname);
+                    SendPropertyChanging(() => Nachname);
                     nachname = value;
-                    SendPropertyChanged(() => nachname);
+                    SendPropertyChanged(() => Nachname);
                 }
             }
         }
@@ -50,9 +50,9 @@ namespace AutoReservation.Common.DataTransferObjects
             {
                 if (vorname != value)
                 {
-                    SendPropertyChanging(() => vorname);
+                    SendPropertyChanging(() => Vorname);
                     vorname = value;
-                    SendPropertyChanged(() => vorname);
+                    SendPropertyChanged(() => Vorname);
                 }
             }
         }
@@ -65,9 +65,9 @@ namespace AutoReservation.Common.DataTransferObjects
             {
                 if (geburtsdatum != value)
                 {
-                    SendPropertyChanging(() => geburtsdatum);
+                    SendPropertyChanging(() => Geburtsdatum);
                     geburtsdatum = value;
-                    SendPropertyChanged(() => geburtsdatum);
+                    SendPropertyChanged(() => Geburtsdatum);
                 }
             }
         }

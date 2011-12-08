@@ -21,9 +21,9 @@ namespace AutoReservation.Common.DataTransferObjects
             {
                 if (von != value)
                 {
-                    SendPropertyChanging(() => von);
+                    SendPropertyChanging(() => Von);
                     von = value;
-                    SendPropertyChanged(() => von);
+                    SendPropertyChanged(() => Von);
                 }
             }
         }
@@ -36,9 +36,9 @@ namespace AutoReservation.Common.DataTransferObjects
             {
                 if (bis != value)
                 {
-                    SendPropertyChanging(() => bis);
+                    SendPropertyChanging(() => Bis);
                     bis = value;
-                    SendPropertyChanged(() => bis);
+                    SendPropertyChanged(() => Bis);
                 }
             }
         }
@@ -51,9 +51,9 @@ namespace AutoReservation.Common.DataTransferObjects
             {
                 if (reservationNr != value)
                 {
-                    SendPropertyChanging(() => reservationNr);
+                    SendPropertyChanging(() => ReservationNr);
                     reservationNr = value;
-                    SendPropertyChanged(() => reservationNr);
+                    SendPropertyChanged(() => ReservationNr);
                 }
             }
         }
@@ -66,9 +66,9 @@ namespace AutoReservation.Common.DataTransferObjects
             {
                 if (auto != value)
                 {
-                    SendPropertyChanging(() => auto);
+                    SendPropertyChanging(() => Auto);
                     auto = value;
-                    SendPropertyChanged(() => auto);
+                    SendPropertyChanged(() => Auto);
                 }
             }
         }
@@ -81,9 +81,9 @@ namespace AutoReservation.Common.DataTransferObjects
             {
                 if (kunde != value)
                 {
-                    SendPropertyChanging(() => kunde);
+                    SendPropertyChanging(() => Kunde);
                     kunde = value;
-                    SendPropertyChanged(() => kunde);
+                    SendPropertyChanged(() => Kunde);
                 }
             }
         }

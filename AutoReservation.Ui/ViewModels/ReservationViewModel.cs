@@ -23,6 +23,32 @@ namespace AutoReservation.Ui.ViewModels
             }
         }
 
+        private ObservableCollection<AutoDto> autos;
+        public ObservableCollection<AutoDto> Autos
+        {
+            get
+            {
+                if (autos == null)
+                {
+                    autos = new ObservableCollection<AutoDto>();
+                }
+                return autos;
+            }
+        }
+
+        private ObservableCollection<KundeDto> kunden;
+        public ObservableCollection<KundeDto> Kunden
+        {
+            get
+            {
+                if (kunden == null)
+                {
+                    kunden = new ObservableCollection<KundeDto>();
+                }
+                return kunden;
+            }
+        }
+
         private ReservationDto selectedReservation;
         public ReservationDto SelectedReservation
         {
@@ -59,6 +85,25 @@ namespace AutoReservation.Ui.ViewModels
 
         protected override void Load()
         {
+            Kunden.Clear();
+            foreach (KundeDto kunde in Service.Kunden)
+            {
+                Kunden.Add(kunde);
+            }
+            Autos.Clear();
+            foreach (AutoDto auto in Service.Autos)
+            {
+                Autos.Add(auto);
+            }
+
+            Reservationen.Clear();
+            reservationenOriginal.Clear();
+            foreach (ReservationDto reservation in Service.Reservationen)
+            {
+                Reservationen.Add(reservation);
+                reservationenOriginal.Add((ReservationDto)reservation.Clone());
+            }
+
             Reservationen.Clear();
             reservationenOriginal.Clear();
             foreach (ReservationDto reservation in Service.Reservationen)

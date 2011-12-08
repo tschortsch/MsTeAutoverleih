@@ -16,7 +16,7 @@ namespace AutoReservation.BusinessLayer
         {
             get
             {
-                using (var context = new AutoReservationEntities())
+                using (AutoReservationEntities context = new AutoReservationEntities())
                 {
                     var autos = from a in context.Autos select a;
                     return autos.ToList();
@@ -26,7 +26,7 @@ namespace AutoReservation.BusinessLayer
 
         public Auto GetAutoById(int id)
         {
-            using (var context = new AutoReservationEntities())
+            using (AutoReservationEntities context = new AutoReservationEntities())
             {
                 var auto = from a in context.Autos
                            where a.Id == id
@@ -37,7 +37,7 @@ namespace AutoReservation.BusinessLayer
 
         public void DeleteAuto(Auto auto)
         {
-            using (var context = new AutoReservationEntities())
+            using (AutoReservationEntities context = new AutoReservationEntities())
             {
                 context.Autos.Attach(auto);
                 context.Autos.DeleteObject(auto);
@@ -47,7 +47,7 @@ namespace AutoReservation.BusinessLayer
 
         public void UpdateAuto(Auto modifiedAuto, Auto originalAuto)
         {
-            using (var context = new AutoReservationEntities())
+            using (AutoReservationEntities context = new AutoReservationEntities())
             {
                 try
                 {
@@ -64,7 +64,7 @@ namespace AutoReservation.BusinessLayer
 
         public void InsertAuto(Auto auto)
         {
-            using (var context = new AutoReservationEntities())
+            using (AutoReservationEntities context = new AutoReservationEntities())
             {
                 context.AddToAutos(auto);
                 context.SaveChanges();
@@ -78,7 +78,7 @@ namespace AutoReservation.BusinessLayer
         {
             get
             {
-                using (var context = new AutoReservationEntities())
+                using (AutoReservationEntities context = new AutoReservationEntities())
                 {
                     var reservationen = from r in context.Reservationen select r;
                     return reservationen.ToList();
@@ -88,7 +88,7 @@ namespace AutoReservation.BusinessLayer
 
         public Reservation GetReservationById(int reservationNr)
         {
-            using (var context = new AutoReservationEntities())
+            using (AutoReservationEntities context = new AutoReservationEntities())
             {
                 var reservation = from r in context.Reservationen
                                   where r.ReservationNr == reservationNr
@@ -99,7 +99,7 @@ namespace AutoReservation.BusinessLayer
 
         public void DeleteReservation(Reservation reservation)
         {
-            using (var context = new AutoReservationEntities())
+            using (AutoReservationEntities context = new AutoReservationEntities())
             {
                 context.Reservationen.Attach(reservation);
                 context.Reservationen.DeleteObject(reservation);
@@ -111,7 +111,7 @@ namespace AutoReservation.BusinessLayer
         {
             try
             {
-                using (var context = new AutoReservationEntities())
+                using (AutoReservationEntities context = new AutoReservationEntities())
                 {
                     context.Reservationen.Attach(originalReservation);
                     context.Reservationen.ApplyCurrentValues(modifiedReservation);
@@ -126,7 +126,7 @@ namespace AutoReservation.BusinessLayer
 
         public void InsertReservation(Reservation reservation)
         {
-            using (var context = new AutoReservationEntities())
+            using (AutoReservationEntities context = new AutoReservationEntities())
             {
                 context.AddToReservationen(reservation);
                 context.SaveChanges();
@@ -140,7 +140,7 @@ namespace AutoReservation.BusinessLayer
         {
             get
             {
-                using (var context = new AutoReservationEntities())
+                using (AutoReservationEntities context = new AutoReservationEntities())
                 {
                     var kunden = from k in context.Kunden select k;
                     return kunden.ToList();
@@ -150,7 +150,7 @@ namespace AutoReservation.BusinessLayer
 
         public Kunde GetKundeById(int id)
         {
-            using (var context = new AutoReservationEntities())
+            using (AutoReservationEntities context = new AutoReservationEntities())
             {
                 var kunde = from k in context.Kunden
                             where k.Id == id
@@ -161,7 +161,7 @@ namespace AutoReservation.BusinessLayer
 
         public void DeleteKunde(Kunde kunde)
         {
-            using (var context = new AutoReservationEntities())
+            using (AutoReservationEntities context = new AutoReservationEntities())
             {
                 context.Kunden.Attach(kunde);
                 context.Kunden.DeleteObject(kunde);
@@ -171,7 +171,7 @@ namespace AutoReservation.BusinessLayer
 
         public void UpdateKunde(Kunde modifiedKunde, Kunde originalKunde)
         {
-            using (var context = new AutoReservationEntities())
+            using (AutoReservationEntities context = new AutoReservationEntities())
             {
                 try
                 {
@@ -188,7 +188,7 @@ namespace AutoReservation.BusinessLayer
 
         public void InsertKunde(Kunde kunde)
         {
-            using (var context = new AutoReservationEntities())
+            using (AutoReservationEntities context = new AutoReservationEntities())
             {
                 context.AddToKunden(kunde);
                 context.SaveChanges();
