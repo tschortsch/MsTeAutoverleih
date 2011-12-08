@@ -15,12 +15,15 @@ namespace AutoReservation.Testing
         {
             TestEnvironmentHelper.InitializeTestData();
             AutoReservationBusinessComponent autoReservation = new AutoReservationBusinessComponent();
-            Auto originalAuto = autoReservation.GetAutoById(1);
-            Auto modifiedAuto = autoReservation.GetAutoById(1);
+            Auto originalAuto = autoReservation.Autos[0];
+            Auto modifiedAuto = autoReservation.Autos[0];
             modifiedAuto.Marke = "Neue Marke";
-            autoReservation.UpdateAuto(originalAuto, modifiedAuto);
-            Assert.AreEqual(autoReservation.GetAutoById(1), modifiedAuto);
+            autoReservation.UpdateAuto(modifiedAuto, originalAuto);
+            Assert.AreEqual(autoReservation.Autos[0].Marke, modifiedAuto.Marke);
+            //TODO: Add deep copy to have 2 truly different objects
+            //Assert.AreNotEqual(modifiedAuto.Marke, originalAuto.Marke);
         }
+
         [TestMethod]
         public void GetAllAutosTest()
         {
