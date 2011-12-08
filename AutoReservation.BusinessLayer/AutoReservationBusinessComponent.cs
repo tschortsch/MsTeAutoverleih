@@ -80,7 +80,8 @@ namespace AutoReservation.BusinessLayer
             {
                 using (AutoReservationEntities context = new AutoReservationEntities())
                 {
-                    var reservationen = from r in context.Reservationen select r;
+                    var reservationen = from r in context.Reservationen.Include("Auto").Include("Kunde") select r;
+                    
                     return reservationen.ToList();
                 }
             }
@@ -90,7 +91,7 @@ namespace AutoReservation.BusinessLayer
         {
             using (AutoReservationEntities context = new AutoReservationEntities())
             {
-                var reservation = from r in context.Reservationen
+                var reservation = from r in context.Reservationen.Include("Auto").Include("Kunde")
                                   where r.ReservationNr == reservationNr
                                   select r;
                 return reservation.FirstOrDefault();

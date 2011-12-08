@@ -129,6 +129,15 @@ namespace AutoReservation.Common.DataTransferObjects
                 AutoKlasse);
         }
 
+        public override bool Equals(object obj)
+        {
+            var other = obj as AutoDto;
+            if (other != null)
+            {
+                return this.Id == other.Id;
+            }
+            return false;
+        }
 	}
 
     [DataContract]

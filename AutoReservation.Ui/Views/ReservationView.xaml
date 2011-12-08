@@ -32,8 +32,8 @@
                       ItemsSource="{Binding Reservationen}" 
                       SelectedItem="{Binding SelectedReservation, Mode=TwoWay}">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Auto" Binding="{Binding Auto}" />
-                    <DataGridTextColumn Header="Kunde" Binding="{Binding Kunde}" />
+                    <DataGridTextColumn Header="Auto" Binding="{Binding Auto.Marke}" />
+                    <DataGridTextColumn Header="Kunde" Binding="{Binding Kunde.Nachname}" />
                     <DataGridTextColumn Header="Von" Binding="{Binding Von, StringFormat=\{0:dd.MM.yyyy\}, Mode=TwoWay}" />
                     <DataGridTextColumn Header="Bis" Binding="{Binding Bis, StringFormat=\{0:dd.MM.yyyy\}, Mode=TwoWay}" />
                 </DataGrid.Columns>
@@ -81,11 +81,13 @@
                 Reservation Editieren
             </Label>
             <ComboBox Grid.Column="1" Grid.Row="1" 
-                      ItemsSource="{Binding Autos, Mode=OneWay}"
-                      SelectedIndex="{Binding SelectedReservation.Auto}"  />
+                      ItemsSource="{Binding Autos}" 
+                      SelectedItem="{Binding SelectedReservation.Auto}"
+                      DisplayMemberPath="Marke" />
             <ComboBox Grid.Column="1" Grid.Row="2" 
-                      ItemsSource="{Binding Kunden, Mode=OneWay}"
-                      SelectedIndex="{Binding SelectedReservation.Kunde}"  />
+                      ItemsSource="{Binding Kunden}"
+                      SelectedItem="{Binding SelectedReservation.Kunde}"
+                      DisplayMemberPath="Nachname" />
             <DatePicker Grid.Column="1" Grid.Row="3" SelectedDate="{Binding SelectedReservation.Von}" DisplayDateEnd="12/31/2020" DisplayDateStart="1/1/1900" />
             <DatePicker Grid.Column="1" Grid.Row="4" SelectedDate="{Binding SelectedReservation.Bis}" DisplayDateEnd="12/31/2020" DisplayDateStart="1/1/1900" />
         </Grid>

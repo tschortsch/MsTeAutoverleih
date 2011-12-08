@@ -103,14 +103,6 @@ namespace AutoReservation.Ui.ViewModels
                 Reservationen.Add(reservation);
                 reservationenOriginal.Add((ReservationDto)reservation.Clone());
             }
-
-            Reservationen.Clear();
-            reservationenOriginal.Clear();
-            foreach (ReservationDto reservation in Service.Reservationen)
-            {
-                Reservationen.Add(reservation);
-                reservationenOriginal.Add((ReservationDto)reservation.Clone());
-            }
             SelectedReservation = Reservationen.FirstOrDefault();
         }
 
