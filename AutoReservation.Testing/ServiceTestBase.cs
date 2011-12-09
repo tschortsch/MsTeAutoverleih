@@ -170,21 +170,45 @@ namespace AutoReservation.Testing
         public void UpdateAutoTestWithOptimisticConcurrency()
         {
             TestEnvironmentHelper.InitializeTestData();
-
+            AutoReservationService service = new AutoReservationService();
+            AutoDto originalAuto = service.Autos[0];
+            AutoDto modifiedAuto = (AutoDto)originalAuto.Clone();
+            AutoDto modifiedAuto2 = (AutoDto)originalAuto.Clone();
+            modifiedAuto.Marke = "Neue Marke";
+            modifiedAuto2.Marke = "Neue Marke2";
+            service.UpdateAuto(modifiedAuto, originalAuto);
+            service.UpdateAuto(modifiedAuto2, originalAuto);
+            // TODO write Assert.Throw()
         }
 
         [TestMethod]
         public void UpdateKundeTestWithOptimisticConcurrency()
         {
             TestEnvironmentHelper.InitializeTestData();
-
+            AutoReservationService service = new AutoReservationService();
+            KundeDto originalKunde = service.Kunden[0];
+            KundeDto modifiedKunde = (KundeDto)originalKunde.Clone();
+            KundeDto modifiedKunde2 = (KundeDto)originalKunde.Clone();
+            modifiedKunde.Nachname = "Neuer Nachname";
+            modifiedKunde2.Nachname = "Neuer Nachname2";
+            service.UpdateKunde(modifiedKunde, originalKunde);
+            service.UpdateKunde(modifiedKunde2, originalKunde);
+            // TODO write Assert.Throw()
         }
 
         [TestMethod]
         public void UpdateReservationTestWithOptimisticConcurrency()
         {
             TestEnvironmentHelper.InitializeTestData();
-
+            AutoReservationService service = new AutoReservationService();
+            ReservationDto originalReservation = service.Reservationen[0];
+            ReservationDto modifiedReservation = (ReservationDto)originalReservation.Clone();
+            ReservationDto modifiedReservation2 = (ReservationDto)originalReservation.Clone();
+            modifiedReservation.Von = System.DateTime.Today;
+            modifiedReservation2.Von = System.DateTime.Today;
+            service.UpdateReservation(modifiedReservation, originalReservation);
+            service.UpdateReservation(modifiedReservation2, originalReservation);
+            // TODO write Assert.Throw()
         }
 
         [TestMethod]
