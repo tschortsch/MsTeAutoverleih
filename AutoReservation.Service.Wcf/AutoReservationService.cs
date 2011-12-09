@@ -65,10 +65,10 @@ namespace AutoReservation.Service.Wcf
             }
         }
 
-        public Common.DataTransferObjects.ReservationDto GetReservationById(int reservationNr)
+        public Common.DataTransferObjects.ReservationDto GetReservationByNr(int reservationNr)
         {
             WriteActualMethod();
-            return autoReservation.GetReservationById(reservationNr).ConvertToDto();
+            return autoReservation.GetReservationByNr(reservationNr).ConvertToDto();
         }
 
         public void DeleteReservation(Common.DataTransferObjects.ReservationDto reservation)

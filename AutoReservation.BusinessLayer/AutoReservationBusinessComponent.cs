@@ -87,7 +87,7 @@ namespace AutoReservation.BusinessLayer
             }
         }
 
-        public Reservation GetReservationById(int reservationNr)
+        public Reservation GetReservationByNr(int reservationNr)
         {
             using (AutoReservationEntities context = new AutoReservationEntities())
             {

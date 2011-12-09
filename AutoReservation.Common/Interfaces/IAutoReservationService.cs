@@ -24,7 +24,7 @@ namespace AutoReservation.Common.Interfaces
         // Reservation CRUD-Operationen
         IList<ReservationDto> Reservationen { [OperationContract] get; }
         [OperationContract]
-        ReservationDto GetReservationById(int reservationNr);
+        ReservationDto GetReservationByNr(int reservationNr);
         [OperationContract]
         void DeleteReservation(ReservationDto reservation);
         [OperationContract]
