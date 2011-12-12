@@ -3,6 +3,8 @@ using AutoReservation.Common.Interfaces;
 using AutoReservation.Service.Wcf;
 using AutoReservation.Common.DataTransferObjects;
 using System.Collections.Generic;
+using AutoReservation.BusinessLayer;
+using AutoReservation.Dal;
 
 namespace AutoReservation.Testing
 {
@@ -177,8 +179,15 @@ namespace AutoReservation.Testing
             modifiedAuto.Marke = "Neue Marke";
             modifiedAuto2.Marke = "Neue Marke2";
             service.UpdateAuto(modifiedAuto, originalAuto);
-            service.UpdateAuto(modifiedAuto2, originalAuto);
-            // TODO write Assert.Throw()
+            try
+            {
+                service.UpdateAuto(modifiedAuto2, originalAuto);
+                Assert.Fail();
+            }
+            catch (LocalOptimisticConcurrencyException<Auto> ex)
+            {
+                Assert.IsNotNull(ex);
+            }
         }
 
         [TestMethod]
@@ -192,8 +201,15 @@ namespace AutoReservation.Testing
             modifiedKunde.Nachname = "Neuer Nachname";
             modifiedKunde2.Nachname = "Neuer Nachname2";
             service.UpdateKunde(modifiedKunde, originalKunde);
-            service.UpdateKunde(modifiedKunde2, originalKunde);
-            // TODO write Assert.Throw()
+            try
+            {
+                service.UpdateKunde(modifiedKunde2, originalKunde);
+                Assert.Fail();
+            }
+            catch (LocalOptimisticConcurrencyException<Kunde> ex)
+            {
+                Assert.IsNotNull(ex);
+            }
         }
 
         [TestMethod]
@@ -207,8 +223,15 @@ namespace AutoReservation.Testing
             modifiedReservation.Von = System.DateTime.Today;
             modifiedReservation2.Von = System.DateTime.Today;
             service.UpdateReservation(modifiedReservation, originalReservation);
-            service.UpdateReservation(modifiedReservation2, originalReservation);
-            // TODO write Assert.Throw()
+            try
+            {
+                service.UpdateReservation(modifiedReservation2, originalReservation);
+                Assert.Fail();
+            }
+            catch (LocalOptimisticConcurrencyException<Reservation> ex)
+            {
+                Assert.IsNotNull(ex);
+            }
         }
 
         [TestMethod]

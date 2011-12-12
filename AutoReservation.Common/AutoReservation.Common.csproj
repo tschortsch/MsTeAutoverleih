@@ -73,7 +73,6 @@
     <Compile Include="DataTransferObjects\ReservationDto.cs" />
     <Compile Include="Exceptions\OptimisticConcurrencyException.cs" />
     <Compile Include="Interfaces\IAutoReservationService.cs" />
-    <Compile Include="LocalOptimisticConcurrencyException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

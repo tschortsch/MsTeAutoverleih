@@ -14,6 +14,21 @@ namespace AutoReservation.Common.DataTransferObjects
         private KundeDto kunde;
 
         [DataMember]
+        public int ReservationNr
+        {
+            get { return reservationNr; }
+            set
+            {
+                if (reservationNr != value)
+                {
+                    SendPropertyChanging(() => ReservationNr);
+                    reservationNr = value;
+                    SendPropertyChanged(() => ReservationNr);
+                }
+            }
+        }
+
+        [DataMember]
         public DateTime Von
         {
             get { return von; }
@@ -39,21 +54,6 @@ namespace AutoReservation.Common.DataTransferObjects
                     SendPropertyChanging(() => Bis);
                     bis = value;
                     SendPropertyChanged(() => Bis);
-                }
-            }
-        }
-
-        [DataMember]
-        public int ReservationNr
-        {
-            get { return reservationNr; }
-            set
-            {
-                if (reservationNr != value)
-                {
-                    SendPropertyChanging(() => ReservationNr);
-                    reservationNr = value;
-                    SendPropertyChanged(() => ReservationNr);
                 }
             }
         }

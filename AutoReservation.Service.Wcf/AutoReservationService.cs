@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Diagnostics;
 using AutoReservation.Common.Interfaces;
+using AutoReservation.Common.DataTransferObjects;
 using AutoReservation.BusinessLayer;
 using System.ServiceModel;
+using System.Collections.Generic;
+
 
 namespace AutoReservation.Service.Wcf
 {
@@ -22,7 +25,7 @@ namespace AutoReservation.Service.Wcf
         }
 
         // Auto CRUD-Operationen
-        public System.Collections.Generic.IList<Common.DataTransferObjects.AutoDto> Autos
+        public IList<AutoDto> Autos
         {
             get
             {
@@ -31,32 +34,32 @@ namespace AutoReservation.Service.Wcf
             }
         }
 
-        public Common.DataTransferObjects.AutoDto GetAutoById(int id)
+        public AutoDto GetAutoById(int id)
         {
             WriteActualMethod();
             return autoReservation.GetAutoById(id).ConvertToDto();
         }
 
-        public void DeleteAuto(Common.DataTransferObjects.AutoDto auto)
+        public void DeleteAuto(AutoDto auto)
         {
             WriteActualMethod();
             autoReservation.DeleteAuto(auto.ConvertToEntity());
         }
 
-        public void UpdateAuto(Common.DataTransferObjects.AutoDto modifiedAuto, Common.DataTransferObjects.AutoDto originalAuto)
+        public void UpdateAuto(AutoDto modifiedAuto, AutoDto originalAuto)
         {
             WriteActualMethod();
             autoReservation.UpdateAuto(modifiedAuto.ConvertToEntity(), originalAuto.ConvertToEntity());
         }
 
-        public void InsertAuto(Common.DataTransferObjects.AutoDto auto)
+        public void InsertAuto(AutoDto auto)
         {
             WriteActualMethod();
             autoReservation.InsertAuto(auto.ConvertToEntity());
         }
 
         // Reservation CRUD-Operationen
-        public System.Collections.Generic.IList<Common.DataTransferObjects.ReservationDto> Reservationen
+        public IList<ReservationDto> Reservationen
         {
             get
             {
@@ -65,32 +68,32 @@ namespace AutoReservation.Service.Wcf
             }
         }
 
-        public Common.DataTransferObjects.ReservationDto GetReservationByNr(int reservationNr)
+        public ReservationDto GetReservationByNr(int reservationNr)
         {
             WriteActualMethod();
             return autoReservation.GetReservationByNr(reservationNr).ConvertToDto();
         }
 
-        public void DeleteReservation(Common.DataTransferObjects.ReservationDto reservation)
+        public void DeleteReservation(ReservationDto reservation)
         {
             WriteActualMethod();
             autoReservation.DeleteReservation(reservation.ConvertToEntity());
         }
 
-        public void UpdateReservation(Common.DataTransferObjects.ReservationDto modifiedReservation, Common.DataTransferObjects.ReservationDto originalReservation)
+        public void UpdateReservation(ReservationDto modifiedReservation, ReservationDto originalReservation)
         {
             WriteActualMethod();
             autoReservation.UpdateReservation(modifiedReservation.ConvertToEntity(), originalReservation.ConvertToEntity());
         }
 
-        public void InsertReservation(Common.DataTransferObjects.ReservationDto reservation)
+        public void InsertReservation(ReservationDto reservation)
         {
             WriteActualMethod();
             autoReservation.InsertReservation(reservation.ConvertToEntity());
         }
 
         // Kunde CRUD-Operationen
-        public System.Collections.Generic.IList<Common.DataTransferObjects.KundeDto> Kunden
+        public IList<KundeDto> Kunden
         {
             get
             {
@@ -99,25 +102,25 @@ namespace AutoReservation.Service.Wcf
             }
         }
 
-        public Common.DataTransferObjects.KundeDto GetKundeById(int id)
+        public KundeDto GetKundeById(int id)
         {
             WriteActualMethod();
             return autoReservation.GetKundeById(id).ConvertToDto();
         }
 
-        public void DeleteKunde(Common.DataTransferObjects.KundeDto kunde)
+        public void DeleteKunde(KundeDto kunde)
         {
             WriteActualMethod();
             autoReservation.DeleteKunde(kunde.ConvertToEntity());
         }
 
-        public void UpdateKunde(Common.DataTransferObjects.KundeDto modifiedKunde, Common.DataTransferObjects.KundeDto originalKunde)
+        public void UpdateKunde(KundeDto modifiedKunde, KundeDto originalKunde)
         {
             WriteActualMethod();
             autoReservation.UpdateKunde(modifiedKunde.ConvertToEntity(), originalKunde.ConvertToEntity());
         }
 
-        public void InsertKunde(Common.DataTransferObjects.KundeDto kunde)
+        public void InsertKunde(KundeDto kunde)
         {
             WriteActualMethod();
             autoReservation.InsertKunde(kunde.ConvertToEntity());

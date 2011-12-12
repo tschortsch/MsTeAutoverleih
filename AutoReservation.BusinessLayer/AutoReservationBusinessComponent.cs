@@ -57,7 +57,7 @@ namespace AutoReservation.BusinessLayer
                 }
                 catch (OptimisticConcurrencyException)
                 {
-                    throw new LocalOptimisticConcurrencyException<Kunde>("Auto wurde bereits verändert.");
+                    throw new LocalOptimisticConcurrencyException<Auto>("Auto wurde bereits verändert.");
                 }
             }
         }
@@ -121,7 +121,7 @@ namespace AutoReservation.BusinessLayer
             }
             catch (OptimisticConcurrencyException)
             {
-                throw new LocalOptimisticConcurrencyException<Kunde>("Reservation wurde bereits verändert.");
+                throw new LocalOptimisticConcurrencyException<Reservation>("Reservation wurde bereits verändert.");
             }
         }
 
