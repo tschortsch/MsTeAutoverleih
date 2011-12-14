@@ -88,6 +88,16 @@ namespace AutoReservation.Common.DataTransferObjects
             }
         }
 
+        public override bool Equals(object obj)
+        {
+            var other = obj as ReservationDto;
+            if (other != null)
+            {
+                return this.ReservationNr == other.ReservationNr;
+            }
+            return false;
+        }
+
         public override string Validate()
         {
             StringBuilder error = new StringBuilder();
